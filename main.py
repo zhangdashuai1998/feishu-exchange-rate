@@ -87,7 +87,20 @@ for record in records:
         }
     }
 
-    requests.put(
+    payload = {
+    "fields": {
+        "汇率": value,
+        "更新时间": update_time
+    }
+}
+
+update_resp = requests.patch(
+    update_url,
+    headers=headers,
+    json=payload
+)
+
+print(update_resp.json())
         update_url,
         headers=headers,
         json=payload
