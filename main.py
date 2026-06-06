@@ -87,12 +87,6 @@ for record in records:
         }
     }
 
-    payload = {
-    "fields": {
-        "汇率": value,
-        "更新时间": update_time
-    }
-}
 
 update_resp = requests.patch(
     update_url,
@@ -101,9 +95,3 @@ update_resp = requests.patch(
 )
 
 print(update_resp.json())
-        update_url,
-        headers=headers,
-        json=payload
-    )
-
-print("Update completed.")
