@@ -94,4 +94,7 @@ update_resp = requests.patch(
     json=payload
 )
 
-print(update_resp.json())
+print(update_resp.status_code)
+print(update_resp.text)
+
+print("Update completed.")
