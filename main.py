@@ -51,7 +51,12 @@ records_resp = requests.get(
     headers=headers
 ).json()
 
-records = records_resp["data"]["items"]
+print("FEISHU RESPONSE:")
+print(records_resp)
+
+records = records_resp.get("data", {}).get("items", [])
+
+print("records count =", len(records))
 
 for record in records:
 
