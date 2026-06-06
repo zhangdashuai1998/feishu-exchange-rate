@@ -74,12 +74,10 @@ for record in records:
 
     value = round(1 / rates[code], 4)
 
-    update_url = (
-        f"https://open.feishu.cn/open-apis/bitable/v1/apps/"
-        f"{BASE_TOKEN}/tables/{TABLE_ID}/records/"
-        f"{record['record_id']}"
-    )
-
+update_url = (
+    f"https://open.feishu.cn/open-apis/bitable/v1/apps/"
+    f"{BASE_TOKEN}/tables/{TABLE_ID}/records/{record['record_id']}"
+)
     payload = {
         "fields": {
             "汇率": value,
