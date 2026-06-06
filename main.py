@@ -78,15 +78,15 @@ update_url = (
     f"https://open.feishu.cn/open-apis/bitable/v1/apps/"
     f"{BASE_TOKEN}/tables/{TABLE_ID}/records/{record['record_id']}"
 )
-    payload = {
-        "fields": {
-            "汇率": value,
-            "更新时间": update_time
-        }
+
+payload = {
+    "fields": {
+        "汇率": value,
+        "更新时间": update_time
     }
+}
 
-
-update_resp = requests.patch(
+update_resp = requests.put(
     update_url,
     headers=headers,
     json=payload
